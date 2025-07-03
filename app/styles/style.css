@@ -59,6 +59,21 @@ main {
   -webkit-tap-highlight-color: transparent;
 }
 
+#action-buttons button:nth-child(1) {
+  color: var(--color-purple-light);
+}
+#action-buttons button:nth-child(1):hover {
+  color: white;
+}
+
+#action-buttons button:nth-child(4n) {
+  background-color: var(--color-purple-dark);
+}
+
+#action-buttons button:nth-last-child(1) {
+  background-color: var(--color-purple);
+}
+
 #action-buttons button:hover {
   background-color: var(--color-purple-light);
 }
