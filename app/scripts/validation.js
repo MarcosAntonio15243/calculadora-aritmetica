@@ -4,16 +4,21 @@ import { log } from "./util.js";
 function validateExpression(expression) {
   log("Iniciando validação de expressão aritmética...");
 
-  // Regex para aceitar apenas números e símbolos válidos: "(", ")", "/", "*", "+", "-" e "."
-  const regexCaracteres = /^[0-9+\-*/().\s]+$/;
-  if (!regexCaracteres.test(expression)) {
-    log(`Expressão inválida "${expression}": A expressão deve conter apenas números e símbolos pré-definidos: "(", ")", "/", "*", "+", "-" e ".".`, "ERRO");
-    return false;
-  }
-
   // Remove espaços para análise sintática mais simples
   const expr = expression.replace(/\s+/g, '');
   log(`Removendo espaços da expressão para análise sintática mais simples: exp="${expr}"`);
+
+  if (expr.length == 0) {
+    log("Validação de expressão aritmética finalizada");
+    return true;
+  }
+
+  // Regex para aceitar apenas números e símbolos válidos: "(", ")", "/", "*", "+", "-" e "."
+  const regexCaracteres = /^[0-9+\-*/().\s]+$/;
+  if (!regexCaracteres.test(expr)) {
+    log(`Expressão inválida "${expression}": A expressão deve conter apenas números e símbolos pré-definidos: "(", ")", "/", "*", "+", "-" e ".".`, "ERRO");
+    return false;
+  }
 
   // Checa se a expressão inicia com "*" ou "/"
   if (/^[*/]/.test(expr)) {

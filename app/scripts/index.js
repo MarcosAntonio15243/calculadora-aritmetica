@@ -43,8 +43,11 @@ buttons[buttons.length-1].addEventListener("click", () => {
   if (validateExpression(input.value)) {
     try {
       var expression = input.value;
-      input.value = eval(expression);
-      log(`Expressão executada: ${expression} = ${input.value}`);
+      var result = eval(expression);
+      input.value = result || "";
+      if (result) {
+        log(`Expressão executada: ${expression} = ${input.value}`);
+      }
     } catch (error) {
       input.placeholder = "erro";
       input.value = "";
