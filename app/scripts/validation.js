@@ -22,43 +22,43 @@ function validateExpression(expression) {
     if (char === '(') balance++;
     if (char === ')') balance--;
     if (balance < 0) {
-      log(`Expressão inválida "${input.value}": Parênteses não devem ser fechados antes de abri-los`, "ERRO");
+      log(`Expressão inválida "${expression}": Parênteses não devem ser fechados antes de abri-los`, "ERRO");
       return false; // há algum parênteses que fecha antes de abrir
     }
   }
   // Checa se todos os parênteses abertos foram fechados
   if (balance !== 0) {
-    log(`Expressão inválida "${input.value}": Existem parênteses abertos que não foram fechados`, "ERRO");
+    log(`Expressão inválida "${expression}": Existem parênteses abertos que não foram fechados`, "ERRO");
     return false;
   }
 
   // Checa parênteses vazios
   if (expr.includes('()')) {
-    log(`Expressão inválida "${input.value}": Parênteses devem conter pelo menos um número ou expressão entre si`, "ERRO");
+    log(`Expressão inválida "${expression}": Parênteses devem conter pelo menos um número ou expressão entre si`, "ERRO");
     return false;
   }
 
   // Checa operadores duplicados (++, --, **, //)
   if (/([+\-*/]{2,})/.test(expr)) {
-    log(`Expressão inválida "${input.value}": Operadores duplicados não são permitidos`, "ERRO");
+    log(`Expressão inválida "${expression}": Operadores duplicados não são permitidos`, "ERRO");
     return false;
   }
 
   // Checa se termina com operador
   if (/[+\-*/]$/.test(expr)) {
-    log(`Expressão inválida "${input.value}": Expressão não deve ser finalizada com um operador`, "ERRO");
+    log(`Expressão inválida "${expression}": Expressão não deve ser finalizada com um operador`, "ERRO");
     return false;
   }
 
   // Checa operadores logo depois de '(' ou antes de ')'
   if (/\([*/]/.test(expr) || /[+\-\*/]\)/.test(expr)) {
-    log(`Expressão inválida "${input.value}": Não devem haver operadores "/" ou "*" logo após abertura '(' ou logo antes de fechamento ')' de parênteses`, "ERRO");
+    log(`Expressão inválida "${expression}": Não devem haver operadores "/" ou "*" logo após abertura '(' ou logo antes de fechamento ')' de parênteses`, "ERRO");
     return false;
   }
 
   // Checa pontos duplicados em um mesmo número (ex: 3..14)
   if (/\d*\.\d*\./.test(expr)) {
-    log(`Expressão inválida "${input.value}": Não se deve haver mais de um ponto flutuante '.' consecutivamente`, "ERRO");
+    log(`Expressão inválida "${expression}": Não se deve haver mais de um ponto flutuante '.' consecutivamente`, "ERRO");
     return false;
   }
 
