@@ -60,6 +60,16 @@ function validarExpressao() {
     return false;
   }
 
+  // Checa operadores duplicados (++, --, **, //)
+  if (/([+\-*/]{2,})/.test(expr)) {
+    return false;
+  }
+
+  // Checa se termina com operador
+  if (/[+\-*/]$/.test(expr)) {
+    return false;
+  }
+
   // Adicionar outras restrições específicas...
 
   // A expressão está de acordo com as restrições
