@@ -95,7 +95,7 @@ main > span::before {
   gap: 0.5rem;
 }
 
-#action-buttons button {
+#action-buttons .btn-key {
   cursor: pointer;
   background: none;
   color: white;
@@ -110,21 +110,21 @@ main > span::before {
   -webkit-tap-highlight-color: transparent;
 }
 
-#action-buttons button:nth-child(1) {
+#action-buttons .btn-key:nth-child(1) {
   color: var(--color-purple-light);
 }
-#action-buttons button:nth-child(1):hover {
+#action-buttons .btn-key:nth-child(1):hover {
   color: white;
 }
 
-#action-buttons button:nth-child(4n) {
+#action-buttons .btn-key:nth-child(4n) {
   background-color: var(--color-purple-dark);
 }
 
-#action-buttons button:nth-last-child(1) {
+#action-buttons .btn-key:nth-last-child(1) {
   background-color: var(--color-purple);
 }
 
-#action-buttons button:hover {
+#action-buttons .btn-key:hover {
   background-color: var(--color-purple-light);
 }
