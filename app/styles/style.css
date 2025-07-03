@@ -38,6 +38,14 @@ main {
   margin-inline: 10rem;
 }
 
+h1 {
+  font-size: 1.8rem;
+  color: #DEDEDE;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 main > span {
   display: flex;
   flex-direction: row;
