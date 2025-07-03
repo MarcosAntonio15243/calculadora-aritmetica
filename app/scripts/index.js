@@ -37,6 +37,29 @@ function validarExpressao() {
     return false;
   }
 
+  // Remove espaços para análise sintática mais simples
+  const expr = input.value.replace(/\s+/g, '');
+
+  // Checa parênteses balanceados
+  let balance = 0;
+  for (let i = 0; i < expr.length; i++) {
+    const char = expr[i];
+    if (char === '(') balance++;
+    if (char === ')') balance--;
+    if (balance < 0) {
+      return false; // há algum parênteses que fecha antes de abrir
+    }
+  }
+  // Checa se todos os parênteses abertos foram fechados
+  if (balance !== 0) {
+    return false;
+  }
+
+  // Checa parênteses vazios
+  if (expr.includes('()')) {
+    return false;
+  }
+
   // Adicionar outras restrições específicas...
 
   // A expressão está de acordo com as restrições
