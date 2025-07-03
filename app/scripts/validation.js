@@ -13,7 +13,13 @@ function validateExpression(expression) {
 
   // Remove espaços para análise sintática mais simples
   const expr = expression.replace(/\s+/g, '');
-  log(`"Removendo espaços da expressão para análise sintática mais simples: exp="${expr}"`);
+  log(`Removendo espaços da expressão para análise sintática mais simples: exp="${expr}"`);
+
+  // Checa se a expressão inicia com "*" ou "/"
+  if (/^[*/]/.test(expr)) {
+    log(`Expressão inválida "${expression}": Não pode começar com operadores "*" ou "/"`, "ERRO");
+    return false;
+  } 
 
   // Checa parênteses balanceados
   let balance = 0;
