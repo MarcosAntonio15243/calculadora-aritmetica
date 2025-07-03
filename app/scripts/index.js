@@ -70,6 +70,11 @@ function validarExpressao() {
     return false;
   }
 
+  // Checa operadores logo depois de '(' ou antes de ')'
+  if (/\([*/]/.test(expr) || /[*/]\)/.test(expr)) {
+    return false;
+  }
+
   // Adicionar outras restrições específicas...
 
   // A expressão está de acordo com as restrições
