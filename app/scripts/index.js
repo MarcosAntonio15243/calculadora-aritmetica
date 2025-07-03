@@ -26,3 +26,36 @@ buttons[0].addEventListener("click", (e) => {
 buttons[1].addEventListener("click", (e) => {
   input.value = input.value.slice(0, input.value.length-1);
 })
+
+
+// Função para validar a expressão digitada antes de computá-la
+function validarExpressao() {
+
+  // Regex para aceitar apenas números e símbolos válidos: "(", ")", "/", "*", "+", "-" e "."
+  const regexCaracteres = /^[0-9+\-*/().\s]+$/;
+  if (!regexCaracteres.test(input.value)) {
+    return false;
+  }
+
+  // Adicionar outras restrições específicas...
+
+  // A expressão está de acordo com as restrições
+  return true;
+}
+
+
+// Adicionando evento de click no botão '=' (último botão da calculadora) para computar a expressão digitada
+buttons[buttons.length-1].addEventListener("click", () => {
+  if (validarExpressao()) {
+    try {
+      var expression = input.value;
+      input.value = eval(expression);
+    } catch (error) {
+      input.placeholder = "erro";
+      input.value = "";
+    }
+  } else {
+    input.placeholder = "erro";
+    input.value = "";
+  };
+})
