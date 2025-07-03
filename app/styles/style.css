@@ -38,6 +38,35 @@ main {
   margin-inline: 10rem;
 }
 
+#expression-input {
+  resize: none;
+  text-wrap: none;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+  color: white;
+  text-align: right;
+  padding-block: 5px;
+}
+#expression-input::before {
+  content: "=";
+}
+#expression-input::-webkit-scrollbar {
+  cursor: pointer;
+  background-color: none;
+  height: 6px;
+}
+#expression-input::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: var(--color-purple-dark);
+  border-radius: 8px;
+}
+
 #action-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
