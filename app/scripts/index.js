@@ -75,7 +75,10 @@ function validarExpressao() {
     return false;
   }
 
-  // Adicionar outras restrições específicas...
+  // Checa pontos duplicados em um mesmo número (ex: 3..14)
+  if (/\d*\.\d*\./.test(expr)) {
+    return false;
+  }
 
   // A expressão está de acordo com as restrições
   return true;
