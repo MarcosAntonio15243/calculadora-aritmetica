@@ -22,3 +22,7 @@ buttons[0].addEventListener("click", (e) => {
   input.value = "";
 })
 
+// Adicionando evento de click no botão 'C' (2º botão da calculadora) para deletar o último caractere digitado
+buttons[1].addEventListener("click", (e) => {
+  input.value = input.value.slice(0, input.value.length-1);
+})
