@@ -43,7 +43,7 @@ buttons[buttons.length-1].addEventListener("click", () => {
   if (validateExpression(input.value)) {
     try {
       var expression = input.value;
-      var result = eval(expression);
+      var result = math.evaluate(expression);
       input.value = result || "";
       if (result) {
         log(`Expressão executada: ${expression} = ${input.value}`);
@@ -51,7 +51,7 @@ buttons[buttons.length-1].addEventListener("click", () => {
     } catch (error) {
       input.placeholder = "erro";
       input.value = "";
-      log(`Erro ao executar eval(): ${error}`, "ERRO");
+      log(`Erro ao executar math.evaluate(): ${error}`, "ERRO");
     }
   } else {
     log("Iniciando limpeza do input da expressão...");
