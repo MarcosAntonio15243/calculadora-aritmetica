@@ -14,3 +14,11 @@ for (let index = 2; index < buttons.length - 1; index++) {
   })
 }
 
+// Adicionando evento de click no botão 'CE' (1º botão da calculadora) para limpar toda a expressão
+buttons[0].addEventListener("click", (e) => {
+  if (input.placeholder.includes("erro")) {
+    input.placeholder = "0";
+  }
+  input.value = "";
+})
+
