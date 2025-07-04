@@ -76,4 +76,10 @@ npx cypress open
 
 Isso abrirá a interface do Cypress, onde você poderá escolher e rodar seus testes em modo gráfico.
 
-Na interface, basta selecionar o navegador de sua preferência e, em seguida, abrir o arquivo de testes `calculator.cy.js`.
+Na interface:
+
+1. Selecione a opção **E2E Testing**;
+2. Escolha o navegador de sua preferência (Chrome, Electron ou Firefox) e clique no botão de iniciar os testes e2e no navegador selecionado;
+3. Clique no arquivo `calculator.cy.js` para abrir os testes do arquivo.
+
+O sistema irá, no lado esquerdo, rodar a lista de testes e, no lado direto, mostrar as capturas reais da aplicação sendo executada em cada teste.
