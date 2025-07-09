@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-gray: #EBEBEB;
+  --color-gray-medium: #6B6B6B;
+  --color-dark-gray: #2D2A37;
+  --color-purple: #7F45E2;
+  --color-purple-light: #975DFA;
+  --color-purple-medium: #807ECE;
+  --color-purple-dark: #462878;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--color-purple-medium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--color-dark-gray);
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 
+    0 10px 10px rgba(0, 0, 0, 0.5),
+    0 6px 8px rgba(255, 255, 255, 0.1) inset,
+    0 -4px 5px rgba(0, 0, 0, 0.22) inset;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-inline: 10rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #DEDEDE;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+main > span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-gray-medium);
+  padding-inline: 1rem;
+}
+
+main > span::before {
+  content: "=";
+  font-size: 1.5rem;
+}
+
+#expression-input {
+  resize: none;
+  text-wrap: none;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+  color: white;
+  text-align: right;
+  padding-block: 5px;
+}
+#expression-input::before {
+  content: "=";
+}
+#expression-input::-webkit-scrollbar {
+  cursor: pointer;
+  background-color: none;
+  height: 6px;
+}
+#expression-input::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: var(--color-purple-dark);
+  border-radius: 8px;
+}
+
+#action-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+#action-buttons .btn-key {
+  cursor: pointer;
+  background: none;
+  color: white;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 100%;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 2px 3px rgba(255, 255, 255, 0.1) inset;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#action-buttons .btn-key:nth-child(1) {
+  color: var(--color-purple-light);
+}
+#action-buttons .btn-key:nth-child(1):hover {
+  color: white;
+}
+
+#action-buttons .btn-key:nth-child(4n) {
+  background-color: var(--color-purple-dark);
+}
+
+#action-buttons .btn-key:nth-last-child(1) {
+  background-color: var(--color-purple);
+}
+
+#action-buttons .btn-key:hover {
+  background-color: var(--color-purple-light);
+}
